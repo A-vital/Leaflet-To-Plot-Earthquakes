@@ -29,12 +29,12 @@ function createFeatures(earthquakeData) {
 function createMap(earthquakes) {
 
   // Define Lightmap
-  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
+    tileSize: 518,
     maxZoom: 18,
     zoomOffset: -1,
-    id: "styles/mapbox/light-v10",
+    id: "light-v10",
     accessToken: API_KEY
   });
 // Define a baseMaps object to hold our base layers
