@@ -29,17 +29,26 @@ function createFeatures(earthquakeData) {
 function createMap(earthquakes) {
 
   // Define Lightmap
-  var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 518,
+    tileSize: 512,
     maxZoom: 18,
     zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  });
+
+  var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    maxZoom: 18,
     id: "light-v10",
     accessToken: API_KEY
   });
+
 // Define a baseMaps object to hold our base layers
 var baseMaps = {
-  "Light Map": lightmap
+  "Light Map": lightmap,
+  "Street Map": streetmap
 };
 
   // Create overlay object to hold our overlay layer
@@ -48,7 +57,7 @@ var baseMaps = {
   };
 
   // Create our map, giving it the lightmap and earthquakes layers to display on load
-  var myMap = L.map("map", {
+  var myMap = L.map('map', {
     center: [
       39.8283, 98.5795
     ],
