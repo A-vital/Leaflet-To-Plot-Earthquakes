@@ -31,7 +31,7 @@ function createMap(earthquakes) {
   // Define Lightmap
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 518,
+    //tileSize: 518,
     maxZoom: 18,
     zoomOffset: -1,
     id: "light-v10",
@@ -47,13 +47,13 @@ var baseMaps = {
     Earthquakes: earthquakes
   };
 
-  // Create our map, giving it the streetmap and earthquakes layers to display on load
+  // Create our map, giving it the lightmap and earthquakes layers to display on load
   var myMap = L.map("map", {
     center: [
       32.7502, 114.7655
     ],
     zoom: 5,
-    layers: [streetmap, earthquakes]
+    layers: [lightmap, earthquakes]
   });
 
   // Create a layer control
