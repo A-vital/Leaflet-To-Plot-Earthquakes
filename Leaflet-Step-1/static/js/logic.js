@@ -62,7 +62,7 @@ var baseMaps = {
       39.8283, 98.5795
     ],
     zoom: 5,
-    layers: [lightmap, earthquakes]
+    layers: [streetmap, earthquakes]
   });
 
   // Create a layer control
