@@ -50,7 +50,7 @@ var baseMaps = {
   // Create our map, giving it the lightmap and earthquakes layers to display on load
   var myMap = L.map("map", {
     center: [
-      32.7502, 114.7655
+      39.8283, 98.5795
     ],
     zoom: 5,
     layers: [lightmap, earthquakes]
